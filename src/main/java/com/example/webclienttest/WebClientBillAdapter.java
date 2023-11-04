@@ -32,12 +32,13 @@ public class WebClientBillAdapter {
 
         ParameterizedTypeReference<CreateCodeResponse> TYPE_REFERENCE = new ParameterizedTypeReference<>() {};
 
-        return webClient.mutate()
+        return webClient
+                .mutate() // WebClient.Builder 를 복사하여 새로운 WebClient.Builder 를 만든다.
                 .build()
                 .method(HttpMethod.POST)
                 .uri(uri)
                 .bodyValue(createCodeRequest)
-                .retrieve()
+                .retrieve() // 서버에서 실행 후 응답을 받아온다.
                 .onStatus(httpStatus -> httpStatus.is4xxClientError() || httpStatus.is5xxServerError(),
                         clientResponse -> Mono.error(new RuntimeException("error")))
                 .bodyToMono(TYPE_REFERENCE)
