@@ -1,4 +1,4 @@
-package com.example.webclienttest;
+package com.example.webclient;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

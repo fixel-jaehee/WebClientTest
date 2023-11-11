@@ -1,4 +1,4 @@
-package com.example.webclienttest;
+package com.example.webclient;
 
 import lombok.Data;
 

@@ -37,6 +37,7 @@ dependencies {
         implementation 'io.netty:netty-resolver-dns-native-macos:4.1.100.Final:osx-aarch_64'
     }
 
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.2.1'
 
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
